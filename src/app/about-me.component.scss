@@ -1,0 +1,258 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.about-me-section {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #222;
+  padding: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.about-me-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.about-me-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 20, 20, 0.65);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: 8vh;
+}
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 2px;
+}
+.hero-content .highlight {
+  color: #ff6600;
+}
+.subtitle {
+  font-size: 1.4rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  margin-bottom: 2.5rem;
+  color: #ff6600;
+}
+.hero-btn {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.hero-btn:hover {
+  background: #e65100;
+}
+.hero-footer {
+  position: absolute;
+  left: 0; right: 0; bottom: 2.5rem;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 95vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.contact-info {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.1rem;
+  color: #fff;
+}
+.contact-info .email {
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: 600;
+}
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  filter: invert(1) brightness(1.5);
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.social-icons img:hover {
+  opacity: 1;
+}
+.about-me-tabs-container {
+  width: 100%;
+  background: #ff6600;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.about-me-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: #ff6600;
+  border-bottom: 2px solid #ff6600;
+  padding-bottom: 0.5rem;
+}
+.about-me-tabs button {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  opacity: 0.85;
+}
+.about-me-tabs button.active {
+  background: #fff;
+  color: #ff6600;
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+}
+.about-me-tab-content {
+  background: #f5f7fa;
+  border-radius: 12px 12px 12px 12px;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 350px;
+  padding: 2.5rem 2rem 3rem 2rem;
+  box-shadow: 0 4px 24px rgba(33,150,243,0.08);
+}
+.skills-overview {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.skill-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+  padding: 2rem 2.5rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skill-icon {
+  background: #ff6600;
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+.skill-card h3 {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 1.2rem;
+  color: #ff6600;
+}
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.skill-card li {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+.skill-card li:before {
+  content: '\2713';
+  color: #ff6600;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+.about-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  background: #fff;
+  color: #1976d2;
+  border: none;
+  font-size: 2.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+  z-index: 10;
+  transition: background 0.2s, color 0.2s;
+}
+.about-close-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+@media (max-width: 700px) {
+  .hero-content h1 { font-size: 2.2rem; }
+  .subtitle { font-size: 1rem; }
+  .hero-footer { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+}
+@media (max-width: 900px) {
+  .skills-overview {
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-me-tabs {
+    gap: 1rem;
+  }
+}

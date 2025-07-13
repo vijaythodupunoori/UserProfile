@@ -1,0 +1,139 @@
+<!-- <div class="hero-section ">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+  
+</div>
+
+
+</div> -->
+ <div class="hero-section "><div class="hero-overlay"></div>
+  <div class="hero-content">
+    
+<div class="about-me-tabs-container">
+  <div class="about-me-tabs">
+    <button [class.active]="activeTab === 'about'" (click)="activeTab = 'about'">ABOUT</button>
+    <button [class.active]="activeTab === 'skills'" (click)="activeTab = 'skills'">SKILLS</button>
+    <button [class.active]="activeTab === 'projects'" (click)="activeTab = 'projects'">PROJECTS</button>
+    <button [class.active]="activeTab === 'talks'" (click)="activeTab = 'talks'">TALKS</button>
+    <button [class.active]="activeTab === 'blog'" (click)="activeTab = 'blog'">BLOG</button>
+    <button [class.active]="activeTab === 'resume'" (click)="activeTab = 'resume'">RESUME</button>
+    <button [class.active]="activeTab === 'contact'" (click)="activeTab = 'contact'">CONTACT</button>
+  </div>
+  <div class="about-me-tab-content">
+    
+    <ng-container [ngSwitch]="activeTab">
+      <div *ngSwitchCase="'about'">
+        <!-- About tab content here -->
+       
+        <h2 class="subtitle">Hello, my name is <span class="about-highlight">Vijay Thodupunoori</span></h2>
+        <p class="subtitle">I'm a full-stack developer specialised in frontend and backend development for complex scalable web apps. I write about web development on my blog and regularly speak at various web conferences and meetups. Want to know how I may help your project? Check out my project case studies and resume.</p>
+        <button class="about-hire-btn">Hire Me</button>
+      </div>
+      <div *ngSwitchCase="'skills'">
+        <h2 class="subtitle">Skills Overview</h2>
+        <div class="skills-overview">
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Frontend</h3>
+            <ul>
+              <li>React/Redux/Angular</li>
+              <li>Javascript</li>
+              <li>Node.js</li>
+              <li>Webpack/Gulp/Grunt</li>
+              <li>HTML/CSS/SASS/LESS</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🖥️</div>
+            <h3 class="subtitle">Backend</h3>
+            <ul>
+              <li>Python/Django</li>
+              <li>Ruby/Rails</li>
+              <li>PHP</li>
+              <li>PostgreSQL/MySQL</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3>Others</h3>
+            <ul>
+              <li>DevOps</li>
+              <li>Unit Testing</li>
+              <li>UX/Wireframing</li>
+              <li>Sketch/Balsamiq</li>
+              <li>Wordpress/Shopify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div *ngSwitchCase="'projects'">
+        <h2 class="subtitle">Projects</h2>
+        <div class="projects-list">
+          <ng-container *ngTemplateOutlet="portfolioProject"></ng-container>
+          <ng-container *ngTemplateOutlet="taskManagerProject"></ng-container>
+          <ng-container *ngTemplateOutlet="blogPlatformProject"></ng-container>
+        </div>
+      </div>
+      <div *ngSwitchCase="'resume'">
+ 
+  <iframe src="assets/Vijay_11+_Years_Net_Resume.pdf" width="100%" height="450px" style="border: none; margin-top: 2rem;"></iframe>
+</div>
+      <div *ngSwitchDefault>
+        <h2 class="subtitle">{{ activeTab | titlecase }}</h2>
+        <p class="subtitle">Content for {{ activeTab }} tab coming soon...</p>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<button class="about-close-btn" (click)="goToProfile()" aria-label="Close">&times;</button>
+</div>
+<div></div>
+
+</div>
+
+<div class="social-icons">
+  <a href="https://www.facebook.com/yourprofile" target="_blank" aria-label="Facebook"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" /></a>
+  <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" /></a>
+  <a href="https://www.linkedin.com/in/vijay-bhanu-prasad-thodupunoori-637aa7126/" target="_blank" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" /></a>
+  <a href="https://dribbble.com/yourprofile" target="_blank" aria-label="Dribbble"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/dribbble.svg" alt="Dribbble" /></a>
+  <a href="https://www.instagram.com/yourprofile" target="_blank" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" /></a>
+</div>
+
+<ng-template #portfolioProject>
+  <div class="project-card">
+    <h3 class="subtitle">Portfolio Website</h3>
+    <p class="subtitle">A modern, responsive personal portfolio built with Angular and SCSS, featuring a hero section, tabbed navigation, and social integration.</p>
+    <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+  </div>
+</ng-template>
+<ng-template #taskManagerProject>
+  <div class="project-card">
+    <h3 class="subtitle">Task Manager App</h3>
+    <p class="subtitle">A full-stack task management application with user authentication, real-time updates, and RESTful API integration.</p>
+    <a href="https://github.com/yourusername/task-manager" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+  </div>
+</ng-template>
+<ng-template #blogPlatformProject>
+  <div class="project-card">
+    <h3 class="subtitle">Blog Platform</h3>
+    <p class="subtitle">A scalable blog platform supporting markdown, comments, and user profiles, built with Angular and Node.js.</p>
+    <a href="https://github.com/yourusername/blog-platform" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+  </div>
+</ng-template>
+
+<style>
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+</style>
+
